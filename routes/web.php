@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
+use App\Http\Controllers\ComputersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +14,11 @@ use App\Http\Controllers\StaticController;
 |
 */
 
-Route::get('/', [StaticController::class,'index']);
-Route::get('/about', [StaticController::class,'about']);
-Route::get('/portfolio', [StaticController::class,'portfolio']);
-Route::get('/contact', [StaticController::class,'contact']);
-
+Route::get('/', [StaticController::class,'index'])->name('home.index');
+Route::get('/about', [StaticController::class,'about'])->name('home.about');
+//Route::get('/portfolio', [StaticController::class,'portfolio']);
+Route::get('/contact', [StaticController::class,'contact'])->name('home.contact');
+Route::resource('computers', ComputersController::class);
 
 /*
 Route::get('/store', function () {

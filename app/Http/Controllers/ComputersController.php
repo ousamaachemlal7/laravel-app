@@ -13,7 +13,7 @@ class ComputersController extends Controller
      */
     public function index()
     {
-        //
+        return view('computers.index');
     }
 
     /**
